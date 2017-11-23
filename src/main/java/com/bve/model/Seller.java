@@ -1,10 +1,10 @@
-package com.tavrida.bve.model;
+package com.bve.model;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "cars")
-public class Car {
+@Table(name = "sellers")
+public class Seller {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -13,22 +13,22 @@ public class Car {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "year")
-    private int year;
+    @Column(name = "adress")
+    private String adress;
 
     @Override
     public String toString() {
-        return "Car{" +
+        return "Seller{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", year=" + year +
+                ", adress='" + adress + '\'' +
                 '}';
     }
 
-    public Car(int id, String name, int year) {
+    public Seller(int id, String name, String adress) {
         this.id = id;
         this.name = name;
-        this.year = year;
+        this.adress = adress;
     }
 
     public int getId() {
@@ -48,11 +48,11 @@ public class Car {
         this.name = name;
     }
 
-    public int getYear() {
-        return year;
+    public String getAdress() {
+        return adress;
     }
 
-    public void setYear(int year) {
-        this.year = year;
+    public void setAdress(String adress) {
+        this.adress = adress;
     }
 }
